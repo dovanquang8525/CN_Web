@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-areas: 
+                "logo logo"
+                "link picture"
+                "link footer";
+            grid-template-columns: auto 1fr;
+        }
+        .logo{
+            grid-area: logo;
+            display: grid;
+            justify-content: right;
+            border-bottom: 4px solid orange;
+        }
+        .link{
+            grid-area: link;
+            background-image: url(/img/back2.jpg);
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+        }
+        .link div{
+            border-bottom: 3px dashed orange;
+            padding: 10px;
+        }
+        .text{
+            grid-area: text;
+            display: grid;
+            grid-template-areas: 
+                "start start"
+                "memory material"
+                "memory memory";
+        }.footer{
+            grid-area: footer;
+        }
+        .start{
+            grid-area: start;
+        }
+        .memory{
+            grid-area: memory;
+        }
+        .material{
+            grid-area: material;
+        }
+        .link a {
+            text-decoration: none;
+            border-bottom: 3px dashed orange;
+            padding: 10px;
+        }  
+        body{
+            font-size: x-large;
+        }
+        .box{
+            display: flex;
+            border: 2px solid black;
+            justify-content: space-around;
+            padding: 100px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .box1{
+            border: 2px solid orange;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: yellow;
+        }
+        .box2{
+            border: 2px solid orange;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: yellow;
+        }
+        .picture{
+            grid-area: picture;
+            margin: 10px;
+        }
+        .picture img{
+            width: 800px;
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">
+            <a href="/Tuan2_BTTH/Bai4/Home.html">Home.html</a>
+        </div>
+
+        <div class="box2">
+            <a href="/Tuan2_BTTH/Bai4/Start.html">Start.html</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="logo">
+            <img src="/img/scraps.jpg" alt="Scraps">
+        </div>
+
+        <div class="link">
+            <a href="/Tuan2_BTTH/Bai4/Home.html">Home</a>
+            <a href="/Tuan2_BTTH/Bai4/Start.html">Getting Started</a>
+            <div>Scrapbooking Tips</div>
+            <div>Supply List</div>
+            <div>Online Classes</div>
+            <div>Sample Pages</div>
+            <div>Online Store</div>
+            <div>Shopping Cart</div>
+            <div>Checkout</div>
+            <div>Your Account</div>
+            <div>Order Status</div>
+            <div>Wish List</div>
+            <div>Customer Service</div>
+            <div>About Us</div>
+            <div>Newsletter</div>
+            <div>FAQ</div>
+            <div>Contact Us</div>
+        </div>
+
+        <div class="picture">
+            <img src="/img/sample.jpg" alt="Sample">
+        </div>
+
+        <div class="footer">
+            footer
+        </div>
+    </div>
+</body>
+</html>

@@ -7,6 +7,7 @@
     <style>
         body{
             background-image: url('/img/background.png');
+            font-size: larger;
         }
         .container{
             display: grid;
@@ -14,33 +15,133 @@
                 "header header"
                 "section aside"
                 "footer footer";
-            grid-column: 2fr 1fr;
+            grid-template-columns: 2fr 1fr;
         }
         .header{
             grid-area: header;
+            display: grid;
+            color: whitesmoke;
+            font-family: 'Courier New', Courier, monospace;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            grid-template-areas: 
+                "header header"
+                "nav nav";
         }
         .section{
             grid-area: section;
-            display: grid;
-            grid-template-areas: 
-                "article picture"
-                "article picture";
+            background-color: white;
         }
         .aside{
             grid-area: aside;
-            
+            background-color: white;
+            border-left: 1px solid grey;
+            padding: 10px;
         }
         .footer{
             grid-area: footer;
+            color: whitesmoke;
+            background-color: grey;
+            padding: 10px;
+        }
+        .article{
+            grid-area: article;
+            margin: 30px;
+        }
+        .nav{
+            grid-area: nav;
+            display: flex;
+            background-color: grey;
+            
+        }
+        li{
+            list-style-type: none;
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .article > div {
+            display: flex;           
+            margin-bottom: 20px;
+        }
+
+        .picture {
+            margin-right: 20px;   
+            border: 1px solid grey;   
+        }
+        h3{
+            color: red;
+        }
+        ul{
+            color: red;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">header</div>
-        <div class="section">section</div>
-        <div class="aside">aside</div>
-        <div class="footer">footer</div>
+        <div class="header">
+            <img src="/img/logo.png" alt="Logo">
+            <div>
+                <h1><b>YOKO'S KITCHEN</b></h1>
+                <p>JAPANESE COOKING CLASSES</p>
+            </div>
+
+            <div class="nav">
+                <li>home</li>
+                <li>classes</li>
+                <li>catering</li>
+                <li>about</li>
+                <li>contact</li>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="article">
+                <div>
+                    <div class="picture">
+                        <img src="/img/bokchoi.png" alt="Bok Choi" width="300px">
+                        <p>Bok Choi</p>
+                    </div>
+                    <div>
+                        <h2>Japanese Vegetarian</h2>
+                        <h3>Five week course in London</h3>
+                        <p>A five week introduction to traditional Japanese vegetarian meals, teaching you a selection of rice and noodle dishes.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="picture">
+                        <img src="/img/teriyaki.jpg" alt="Teriyaki" width="300px">
+                        <p>Teriyaki Sauce</p>
+                    </div>
+                    <div>
+                        <h2>Sauces Masterclass</h2>
+                    <h3>One day workshop</h3>
+                    <p>An intensive one-day course looking at how to create the most delicious sauces for use in a range of Japanese cookery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aside">
+            <h3>Popular Recipies</h3>
+            <ul>
+                <li>Yakitori (grilled chicken)</li>
+                <hr>
+                <li>Tsukune (minced chicken patties)</li>
+                <hr>
+                <li>Okonomiyaki (savory pancakes)</li>
+                <hr>
+                <li>Mizutaki (chicken stew)</li>
+                <hr>
+                <li>Mizutaki (chicken stew)</li>
+                <hr>
+            </ul>
+            <h3>Contact</h3>
+            <p>Yoko's Kitchen</p>
+            <p>27 Redchurch Street</p>
+            <p>Shoreditch</p>
+            <p>London E2 7DP</p>
+        </div>
+        <div class="footer">2011 Yoko's Kitchen</div>
     </div>
 </body>
 </html>

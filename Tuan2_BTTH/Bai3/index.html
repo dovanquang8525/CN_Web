@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: url("/img/background.jpg");
+        display: grid;
+        justify-content: center;
+        margin-top: 100px;
+    }   
+</style>
+<body>
+    <div>
+        <img src="/img/salogo.gif" alt="Salogo">
+    </div>
+    <!-- cách 1: cũ -->
+    <!-- <div>
+         <img src="/img/Siggie.jpg" alt="Siggie" usemap="#Siggie">
+    </div>
+    <map id="Siggie" name="Siggie">
+        <area shape="rect" coords="0, 0, 500, 300" href="/Tuan2_BTTH/Bai3/home.html" alt="Siggie" title="View home page">
+    </map> -->
+
+    <!-- cách 2: mới -->
+    <div>
+        <a href="/Tuan2_BTTH/Bai3/home.html">
+            <img src="/img/Siggie.jpg" alt="Siggie">
+        </a>
+    </div>
+</body>
+</html>

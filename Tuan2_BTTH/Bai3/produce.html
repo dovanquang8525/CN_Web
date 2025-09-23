@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-areas: 
+            "logo logo"
+            "links noidung"
+            "footer footer";
+        }
+        .logo{
+            grid-area: logo;
+        }
+        .links{
+            grid-area: links;
+        }
+        .noidung{
+            grid-area: noidung;
+        }
+        .footer{
+            grid-area: footer;
+        }
+        .text{
+            display: grid;
+            grid-template-areas: 
+            "title picture";
+            grid-template-columns: 2fr auto;
+        }
+
+    </style>
+    <link rel="stylesheet" href="/Tuan2_BTTH/Bai3/farm.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/img/salogo.jpg" alt="Salogo">
+        </div>
+        <div class="links">
+            <a href="/Tuan2_BTTH/Bai3/home.html">Home</a>
+            <a href="/Tuan2_BTTH/Bai3/maze.html">The Corn Maze</a>
+            <a href="/Tuan2_BTTH/Bai3/haunted.html">The Haunted Maze</a>
+            <a href="/Tuan2_BTTH/Bai3/petting.html">Petting Barn</a>
+            <a href="/Tuan2_BTTH/Bai3/produce.html">Produce</a>
+        </div>
+        <div class="noidung">
+            <div class="text">
+                <div class="title">
+                    <h2>The Farm Shop</h2>
+                    <div>
+                        The Sunny Acres Farmshop aims to offer the highest quality fresh produce. You can pick your own or buy it in our shop. Set amidst acres of outstanding natural beauty on the beautiful rolling hills northeast of Council Bluffs, the Farm Shop is easily reached on Highway G, with easy access from Interstate 80. 
+                    </div>
+                    <div>
+                        The Farm Shop was established over 25 years ago with great success. Our products have won numerous awards at local festivals and fairs. We also cater to local supermarkets in the Council Bluffs/Omaha area. Look for our products every Saturday morning from May to October at the Council Bluffs Farmers' Market. 
+                    </div>
+                </div>
+                <div class="picture">
+                    <img src="/img/photo5.jpg" alt="Photo1">
+                </div>
+            </div>
+            
+            <div>
+                <h3>Hours</h3>
+                <div>
+                    <ul>
+                        <li>Monday - Friday: 9 am - 5 pm </li>
+                        <li>Saturday: 9 am - 3 pm </li>
+                        <li>Pick Your Own Produce is available from May 15 - October 22 </li>
+                        <li>The Farm Shop is open year-round </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h3>Products</h3>
+                <div>
+                    <ul>
+                        <li>Freshly baked breads and quiches </li>
+                        <li>High quality meats </li>
+                        <li>Cheese and other dairy products </li>
+                        <li>Freshly-picked fruits and vegetables (in season) </li>
+                        <li>Canned goods and preserves </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            Sunny Acres  *  Tammy & Brent Nielsen  *  1977 Highway G  *  Council Bluffs, IA51503 
+        </div>
+    </div>
+</body>
+</html>

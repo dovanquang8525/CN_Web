@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-areas: 
+            "logo logo"
+            "links noidung"
+            "footer footer";
+        }
+        .logo{
+            grid-area: logo;
+        }
+        .links{
+            grid-area: links;
+        }
+        .noidung{
+            grid-area: noidung;
+        }
+        .footer{
+            grid-area: footer;
+        }
+        .text{
+            display: grid;
+            grid-template-areas: 
+            "title picture";
+            grid-template-columns: 2fr auto;
+        }
+
+    </style>
+    <link rel="stylesheet" href="/Tuan2_BTTH/Bai3/farm.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/img/salogo.jpg" alt="Salogo">
+        </div>
+        <div class="links">
+            <a href="/Tuan2_BTTH/Bai3/home.html">Home</a>
+            <a href="/Tuan2_BTTH/Bai3/maze.html">The Corn Maze</a>
+            <a href="/Tuan2_BTTH/Bai3/haunted.html">The Haunted Maze</a>
+            <a href="/Tuan2_BTTH/Bai3/petting.html">Petting Barn</a>
+            <a href="/Tuan2_BTTH/Bai3/produce.html">Produce</a>
+        </div>
+        <div class="noidung">
+            <div class="text">
+                <div class="title">
+                    <h2>The Petting Barn</h2>
+                    <div>
+                        The Sunny Acres Petting Barn, conveniently located northeast of Council Bluffs, is a perfect setting for people of all ages to learn about farming and farm animals. At our farm you can enjoy over 100 friendly farm animals in a clean, relaxed, hands-on enviroment. The kids can bottle feed the baby goats, lambs, and calves in the Nursery and Bottle Baby pens.Come join us for a fun-filled day. 
+                    </div>
+                    <div>
+                        Teachers: our Petting Barn is an educational experience. Stroll around our 15 acres of open pasture and see animals in their natural habitat. Special events can be arranged for school field trips and classroom activities. Pony rides are available Saturdays and Sundays from April through October (weather permitting). Maximum rider weight limit of 75 pounds, please. 
+                    </div>
+                    <div>
+                        Bring a picnic lunch and stay the day or just enjoy a peaceful hour. Perfect for school or church groups, day-care centers, family outings, company picnics and especially birthday parties. Please come and enjoy our wonderful country atmosphere and relax! We invite you to come out and visit us often. There are always new and exciting events happening at Sunny Acres ... and that's just the way we like it! 
+                    </div>
+
+                </div>
+                <div class="picture">
+                    <img src="/img/photo4.jpg" alt="Photo1">
+                </div>
+            </div>
+            
+            <div>
+                <h3>Hours</h3>
+                <div>
+                    <ul>
+                        <li>Monday - Friday: 9 am - 4 pm </li>
+                        <li>Saturday - Sunday: 11am - 3 pm </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h3>Admission</h3>
+                <div>
+                    <ul>
+                        <li>Adult: $4.00 </li>
+                        <li>Ages 2 - 12: $2.50 </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            Sunny Acres  *  Tammy & Brent Nielsen  *  1977 Highway G  *  Council Bluffs, IA51503 
+        </div>
+    </div>
+</body>
+</html>
