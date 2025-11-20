@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grand Luxe</title>
+
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/style_project.css" />
+
+        <script src="../js/jquery-3.7.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="header-area">
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"
+            >
+                <div class="container">
+                    <a class="navbar-brand" href="../html/home.html">
+                        <img
+                            src="../img/logo_home.png"
+                            alt="Grand Luxe Logo"
+                            height="80"
+                        />
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="#">Trang chủ</a>
+                            </li>
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="#about">Giới thiệu</a>
+                            </li>
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="#rooms">Phòng nghỉ</a>
+                            </li>
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="#services">Dịch vụ</a>
+                            </li>
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="#contact">Liên hệ</a>
+                            </li>
+                            <li class="nav-item m-2">
+                                <button
+                                    type="button"
+                                    class="btn btn-primary btn-booking"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#bookingModal"
+                                >
+                                    Đặt phòng ngay
+                                </button>
+                            </li>
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="../html/history.html"
+                                    >Lịch sử</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <section class="hero-section d-flex align-items-center">
+            <div class="container text-center text-white">
+                <h1 class="display-3 fw-bold">Chào mừng đến với Grand Luxe</h1>
+                <p class="lead mb-4">Trải nghiệm kỳ nghỉ đẳng cấp thượng lưu</p>
+            </div>
+        </section>
+
+        <div
+            class="booking-container container position-relative"
+            style="margin-top: -50px; z-index: 10"
+        >
+            <div class="card shadow p-4 border-0">
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label class="form-label">Ngày nhận phòng</label>
+                            <input type="date" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Ngày trả phòng</label>
+                            <input type="date" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Số người</label>
+                            <select class="form-select">
+                                <option>1 Người</option>
+                                <option>2 Người</option>
+                                <option>Gia đình</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button type="submit" class="btn btn-dark w-100">
+                                Kiểm tra phòng
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="about" class="py-5">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <img
+                            src="../img/about-hotel.png"
+                            alt="About Hotel"
+                            class="img-fluid rounded shadow"
+                        />
+                    </div>
+                    <div class="col-md-6 ps-md-5">
+                        <h2 class="mb-3">Không gian sang trọng & Ấm cúng</h2>
+                        <p class="text-muted">
+                            Tọa lạc tại vị trí đắc địa, Grand Luxe mang đến cho
+                            quý khách những trải nghiệm tuyệt vời nhất với hệ
+                            thống phòng ốc hiện đại và dịch vụ chuẩn 5 sao.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fa fa-check text-primary me-2"></i>
+                                Wi-Fi tốc độ cao miễn phí
+                            </li>
+                            <li>
+                                <i class="fa fa-check text-primary me-2"></i> Bể
+                                bơi vô cực
+                            </li>
+                            <li>
+                                <i class="fa fa-check text-primary me-2"></i>
+                                Nhà hàng Á - Âu
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rooms" class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>Phòng Nghỉ Nổi Bật</h2>
+                    <p class="text-muted">
+                        Lựa chọn không gian nghỉ dưỡng phù hợp với bạn
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm room-card">
+                            <img
+                                src="../img/deluxe-room.png"
+                                class="card-img-top"
+                                alt="Deluxe Room"
+                            />
+                            <div class="card-body">
+                                <h5 class="card-title">Phòng Deluxe</h5>
+                                <p class="card-text text-muted">
+                                    View hướng biển, diện tích 35m2, đầy đủ tiện
+                                    nghi.
+                                </p>
+                                <div
+                                    class="d-flex justify-content-between align-items-center mt-3"
+                                >
+                                    <span class="fw-bold text-primary"
+                                        >1.500.000đ / đêm</span
+                                    >
+                                    <a
+                                        href="#"
+                                        class="btn btn-outline-dark btn-sm"
+                                        >Chi tiết</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm room-card">
+                            <img
+                                src="../img/suite-room.png"
+                                class="card-img-top"
+                                alt="Suite Room"
+                            />
+                            <div class="card-body">
+                                <h5 class="card-title">Phòng Suite</h5>
+                                <p class="card-text text-muted">
+                                    Không gian rộng rãi, có phòng khách riêng
+                                    biệt.
+                                </p>
+                                <div
+                                    class="d-flex justify-content-between align-items-center mt-3"
+                                >
+                                    <span class="fw-bold text-primary"
+                                        >2.500.000đ / đêm</span
+                                    >
+                                    <a
+                                        href="#"
+                                        class="btn btn-outline-dark btn-sm"
+                                        >Chi tiết</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm room-card">
+                            <img
+                                src="../img/family-room.png"
+                                class="card-img-top"
+                                alt="Family Room"
+                            />
+                            <div class="card-body">
+                                <h5 class="card-title">Phòng Gia Đình</h5>
+                                <p class="card-text text-muted">
+                                    Phù hợp cho 4 người, 2 giường đôi lớn.
+                                </p>
+                                <div
+                                    class="d-flex justify-content-between align-items-center mt-3"
+                                >
+                                    <span class="fw-bold text-primary"
+                                        >3.200.000đ / đêm</span
+                                    >
+                                    <a
+                                        href="#"
+                                        class="btn btn-outline-dark btn-sm"
+                                        >Chi tiết</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="services" class="py-5">
+            <div class="container text-center">
+                <h2 class="mb-5">Tiện Ích Dịch Vụ</h2>
+                <div class="row g-4">
+                    <div class="col-6 col-md-2">
+                        <div
+                            class="p-3 border rounded bg-white shadow-sm h-100"
+                        >
+                            <img
+                                src="../img/wifi.png"
+                                alt="Wifi"
+                                class="mb-2"
+                                width="50"
+                            />
+                            <h6>Wi-Fi Free</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <div
+                            class="p-3 border rounded bg-white shadow-sm h-100"
+                        >
+                            <img
+                                src="../img/pool.png"
+                                alt="Pool"
+                                class="mb-2"
+                                width="50"
+                            />
+                            <h6>Hồ Bơi</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <div
+                            class="p-3 border rounded bg-white shadow-sm h-100"
+                        >
+                            <img
+                                src="../img/restaurant.png"
+                                alt="Food"
+                                class="mb-2"
+                                width="50"
+                            />
+                            <h6>Nhà Hàng</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <div
+                            class="p-3 border rounded bg-white shadow-sm h-100"
+                        >
+                            <img
+                                src="../img/gym&yoga.png"
+                                alt="Gym"
+                                class="mb-2"
+                                width="50"
+                            />
+                            <h6>Gym & Spa</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <div
+                            class="p-3 border rounded bg-white shadow-sm h-100"
+                        >
+                            <img
+                                src="../img/parking.png"
+                                alt="Parking"
+                                class="mb-2"
+                                width="50"
+                            />
+                            <h6>Bãi Đậu Xe</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <div
+                            class="p-3 border rounded bg-white shadow-sm h-100"
+                        >
+                            <img
+                                src="../img/suport.png"
+                                alt="24/7"
+                                class="mb-2"
+                                width="50"
+                            />
+                            <h6>Hỗ trợ 24/7</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact" class="bg-dark text-white py-4 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <h5>Về Grand Luxe</h5>
+                        <p class="small text-white-50">
+                            Nơi lưu giữ những khoảnh khắc đáng nhớ của bạn và
+                            gia đình.
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>Liên Hệ</h5>
+                        <ul class="list-unstyled small text-white-50">
+                            <li>
+                                <i class="fa fa-map-marker me-2"></i>123 Đường
+                                Biển, Nha Trang
+                            </li>
+                            <li>
+                                <i class="fa fa-phone me-2"></i>0364 538 814
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope me-2"></i
+                                >grandluxe@gmail.com
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>Theo dõi</h5>
+                        <a href="#" class="text-white me-2"
+                            ><i class="fab fa-facebook"></i
+                        ></a>
+                        <a href="#" class="text-white me-2"
+                            ><i class="fab fa-instagram"></i
+                        ></a>
+                    </div>
+                </div>
+                <hr class="border-secondary" />
+                <div class="text-center small text-white-50">
+                    &copy; 2025 Hotel Website. Designed by Human.
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="modal fade"
+            id="bookingModal"
+            tabindex="-1"
+            aria-labelledby="bookingModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="bookingModalLabel">
+                            Thông Tin Đặt Phòng
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close btn-close-white"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="clientName" class="form-label"
+                                    >Họ và Tên</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="clientName"
+                                    placeholder="Nhập họ tên của bạn"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="clientPhone" class="form-label"
+                                    >Số điện thoại</label
+                                >
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="clientPhone"
+                                    placeholder="Nhập số điện thoại"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="clientEmail" class="form-label"
+                                    >Email</label
+                                >
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="clientEmail"
+                                    placeholder="Nhập địa chỉ email"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="clientNote" class="form-label"
+                                    >Ghi chú thêm</label
+                                >
+                                <textarea
+                                    class="form-control"
+                                    id="clientNote"
+                                    rows="3"
+                                    placeholder="Yêu cầu đặc biệt..."
+                                ></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Hủy
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            Xác nhận
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                // 1. Xử lý sự kiện khi bấm nút "Xác nhận" trong Modal
+                // Lưu ý: Bạn cần thêm id="btnConfirmBooking" vào nút Xác nhận trong Modal HTML trước nhé
+                // Ví dụ: <button type="button" class="btn btn-primary" id="btnConfirmBooking">Xác nhận</button>
+
+                // Ở đây tôi viết code giả định bạn đã thêm ID đó, hoặc tôi sẽ dùng selector theo class
+                $(".modal-footer .btn-primary").click(function () {
+                    // Lấy dữ liệu từ form
+                    var bookingData = {
+                        name: $("#clientName").val(),
+                        phone: $("#clientPhone").val(),
+                        email: $("#clientEmail").val(),
+                        note: $("#clientNote").val(),
+                        date: new Date().toLocaleString(), // Lưu thời điểm đặt
+                    };
+
+                    // Kiểm tra dữ liệu rỗng (cơ bản)
+                    if (!bookingData.name || !bookingData.phone) {
+                        alert("Vui lòng nhập tên và số điện thoại!");
+                        return;
+                    }
+
+                    // Lấy dữ liệu cũ từ LocalStorage (nếu có)
+                    var currentHistory =
+                        JSON.parse(localStorage.getItem("bookingHistory")) ||
+                        [];
+
+                    // Thêm dữ liệu mới vào mảng
+                    currentHistory.push(bookingData);
+
+                    // Lưu ngược lại vào LocalStorage
+                    localStorage.setItem(
+                        "bookingHistory",
+                        JSON.stringify(currentHistory)
+                    );
+
+                    // Thông báo và đóng modal
+                    alert("Đặt phòng thành công! Kiểm tra trang Lịch sử.");
+                    $("#bookingModal").modal("hide");
+
+                    // Reset form
+                    $("form")[1].reset(); // Reset form trong modal (giả định là form thứ 2 trong trang)
+                });
+            });
+        </script>
+    </body>
+</html>

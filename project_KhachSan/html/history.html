@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lịch Sử Đặt Phòng</title>
+
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/style_project.css" />
+
+        <script src="../js/jquery-3.7.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="header-area">
+            <div
+                class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"
+            >
+                <div class="container">
+                    <a class="navbar-brand" href="../html/home.html">
+                        <img
+                            src="../img/logo_home.png"
+                            alt="Grand Luxe Logo"
+                            height="80"
+                        />
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="../html/home.html"
+                                    >Trang chủ</a
+                                >
+                            </li>
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="#about">Giới thiệu</a>
+                            </li>
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="#rooms">Phòng nghỉ</a>
+                            </li>
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="#services">Dịch vụ</a>
+                            </li>
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="#contact">Liên hệ</a>
+                            </li>
+                            <li class="nav-item m-2">
+                                <button
+                                    type="button"
+                                    class="btn btn-primary btn-booking"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#bookingModal"
+                                >
+                                    Đặt phòng ngay
+                                </button>
+                            </li>
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="../html/history.html"
+                                    >Lịch sử</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 150px">
+            <h2 class="mb-4 border-bottom pb-2">Quản Lý Đặt Phòng</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white py-3">
+                            <h5 class="mb-0">Danh sách chi tiết</h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table
+                                    class="table table-hover table-striped mb-0"
+                                    id="historyTable"
+                                >
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Họ Tên</th>
+                                            <th scope="col">Số điện thoại</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Ghi chú</th>
+                                            <th scope="col">Thời gian đặt</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                loadHistory();
+            });
+
+            function loadHistory() {
+                // 1. Lấy dữ liệu
+                var history =
+                    JSON.parse(localStorage.getItem("bookingHistory")) || [];
+                var tableBody = $("#historyTable tbody");
+
+                // Cập nhật số lượng tổng
+                $("#total-count").text(history.length);
+
+                // 2. Xóa dữ liệu cũ trong bảng
+                tableBody.empty();
+
+                // 3. Kiểm tra nếu không có dữ liệu
+                if (history.length === 0) {
+                    tableBody.append(
+                        '<tr><td colspan="6" class="text-center py-4">Chưa có lịch sử đặt phòng nào.</td></tr>'
+                    );
+                    return;
+                }
+
+                // 4. Duyệt qua mảng và tạo dòng (row) HTML (đảo ngược để cái mới nhất lên đầu)
+                history.reverse().forEach(function (item, index) {
+                    var row = `
+                    <tr>
+                        <th scope="row">${index + 1}</th>
+                        <td>${item.name}</td>
+                        <td>${item.phone}</td>
+                        <td>${item.email || "-"}</td>
+                        <td>${item.note || "-"}</td>
+                        <td><small class="text-muted">${item.date}</small></td>
+                    </tr>
+                `;
+                    tableBody.append(row);
+                });
+            }
+        </script>
+    </body>
+</html>

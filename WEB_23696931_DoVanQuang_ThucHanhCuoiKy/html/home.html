@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <img src="../img/banner1.jpg" alt="Banner1" class="w-100">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalId">THANH TOÁN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">LIÊN HỆ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">DANH SÁCH KHÁCH THUÊ SÁCH</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Họ tên</th>
+                            <th scope="col">Ngày mượn</th>
+                            <th scope="col">Ngày trả</th>
+                            <th scope="col">Số ngày</th>
+                            <th scope="col">Thể loại</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Đơn giá</th>
+                            <th scope="col">Thành tiền</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">Mã: - Họ tên: - Lớp: DH19TT</div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modalId">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Thông tin liên hệ</h5>
+                    <span id="thongbao"></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form action="">
+                            <div class="mb-3 row">
+                                <label class="col-4 col-form-label">Họ tên</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="HoTen" onblur="ktraten();" />
+                                    <span id="err1" class="text-danger">*</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                                <label class="col-4 col-form-label">Ngày mượn</label>
+                                <div class="col-8">
+                                    <input type="date" class="form-control" id="NgayMuon" />
+                                    <span id="err1" class="text-danger">*</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                                <label class="col-4 col-form-label">Ngày trả</label>
+                                <div class="col-8">
+                                    <input type="date" class="form-control" id="NgayTra" />
+                                    <span id="err1" class="text-danger">*</span>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3 row">
+                                <label for="" class="col-4 col-form-label">Số ngày</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="SoNgay">
+                                    <span id="err1" class="text-danger">*</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                                <label for="" class="col-4 col-form-label">Mã sách</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="MaSach">
+                                    <span id="err1" class="text-danger">*</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                                <label for="" class="col-4 col-form-label">Tên sách</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="TenSach">
+                                    <span id="err1" class="text-danger">*</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-bs-dismiss="modal"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
