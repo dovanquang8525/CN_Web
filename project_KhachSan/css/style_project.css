@@ -38,3 +38,40 @@ body {
     display: block;
     margin: 0 auto;
 }
+/* social */
+.social-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1); /* Nền mờ sang trọng */
+    border-radius: 50%; /* Hình tròn */
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Hiệu ứng khi di chuột vào nút Facebook */
+.social-btn.facebook:hover {
+    background-color: #1877f2; /* Màu xanh Facebook chuẩn */
+    transform: translateY(-3px); /* Nổi lên nhẹ */
+    color: white;
+}
+
+/* Hiệu ứng khi di chuột vào nút Instagram */
+.social-btn.instagram:hover {
+    background: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 5%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285aeb 90%
+    );
+    transform: translateY(-3px);
+    color: white;
+    border: none;
+}

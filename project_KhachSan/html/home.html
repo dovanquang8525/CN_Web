@@ -3,10 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Grand Luxe - Home</title>
+        <title>Grand Luxe - Trang Chủ</title>
 
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/style_project.css" />
+
+        <!-- QUAN TRỌNG: Thêm FontAwesome để hiển thị logo Facebook/Instagram -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
 
         <script src="../js/jquery-3.7.1.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
@@ -17,7 +23,7 @@
                 class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"
             >
                 <div class="container">
-                    <a class="navbar-brand" href="../html/home.html">
+                    <a class="navbar-brand" href="home.html">
                         <img
                             src="../img/logo_home.png"
                             alt="Grand Luxe Logo"
@@ -33,9 +39,11 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
+                        <ul class="navbar-nav ms-auto align-items-center">
                             <li class="nav-item m-2">
-                                <a class="nav-link" href="#">Trang chủ</a>
+                                <a class="nav-link active" href="home.html"
+                                    >Trang chủ</a
+                                >
                             </li>
                             <li class="nav-item m-2">
                                 <a class="nav-link" href="#about">Giới thiệu</a>
@@ -51,7 +59,7 @@
                             </li>
                             <li class="nav-item m-2">
                                 <a
-                                    href="../html/booking.html"
+                                    href="booking.html"
                                     class="btn btn-primary btn-booking"
                                 >
                                     Đặt phòng ngay
@@ -70,27 +78,38 @@
             </div>
         </section>
 
+        <!-- FORM TÌM KIẾM -->
         <div
             class="booking-container container position-relative"
             style="margin-top: -50px; z-index: 10"
         >
             <div class="card shadow p-4 border-0">
-                <form action="../html/rooms.html">
+                <form action="rooms.html" method="GET">
                     <div class="row g-3">
                         <div class="col-md-3">
                             <label class="form-label">Ngày nhận phòng</label>
-                            <input type="date" class="form-control" />
+                            <input
+                                type="date"
+                                class="form-control"
+                                name="checkin"
+                                required
+                            />
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Ngày trả phòng</label>
-                            <input type="date" class="form-control" />
+                            <input
+                                type="date"
+                                class="form-control"
+                                name="checkout"
+                                required
+                            />
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Số người</label>
-                            <select class="form-select">
-                                <option>1 Người</option>
-                                <option>2 Người</option>
-                                <option>Gia đình</option>
+                            <select class="form-select" name="guests">
+                                <option value="1">1 Người</option>
+                                <option value="2">2 Người</option>
+                                <option value="family">Gia đình</option>
                             </select>
                         </div>
                         <div class="col-md-3 d-flex align-items-end">
@@ -168,7 +187,7 @@
                                         >1.500.000đ / đêm</span
                                     >
                                     <a
-                                        href="../html/booking.html"
+                                        href="booking.html"
                                         class="btn btn-outline-dark btn-sm"
                                         >Chi tiết</a
                                     >
@@ -196,7 +215,7 @@
                                         >2.500.000đ / đêm</span
                                     >
                                     <a
-                                        href="../html/booking.html"
+                                        href="booking.html"
                                         class="btn btn-outline-dark btn-sm"
                                         >Chi tiết</a
                                     >
@@ -223,7 +242,7 @@
                                         >3.200.000đ / đêm</span
                                     >
                                     <a
-                                        href="../html/booking.html"
+                                        href="booking.html"
                                         class="btn btn-outline-dark btn-sm"
                                         >Chi tiết</a
                                     >
@@ -239,7 +258,6 @@
             <div class="container text-center">
                 <h2 class="mb-5">Tiện Ích Dịch Vụ</h2>
                 <div class="row g-4">
-                    <!-- Dịch vụ items (giữ nguyên, chỉ thêm placeholder ảnh) -->
                     <div class="col-6 col-md-2">
                         <div
                             class="p-3 border rounded bg-white shadow-sm h-100"
@@ -350,12 +368,14 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <h5>Theo dõi</h5>
-                        <a href="#" class="text-white me-2"
-                            ><i class="fab fa-facebook"></i
-                        ></a>
-                        <a href="#" class="text-white me-2"
-                            ><i class="fab fa-instagram"></i
-                        ></a>
+                        <div class="mt-2">
+                            <a href="#" class="social-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-btn instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <hr class="border-secondary" />
