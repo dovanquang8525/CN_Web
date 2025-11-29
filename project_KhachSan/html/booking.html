@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Đặt Phòng</title>
+
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/style_project.css" />
+        <script src="../js/jquery-3.7.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="header-area">
+            <div
+                class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"
+            >
+                <div class="container">
+                    <a class="navbar-brand" href="../html/home.html">
+                        <img src="../img/logo_home.png" alt="Grand Luxe Logo"
+                        height="80"
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="../html/home.html"
+                                    >Trang chủ</a
+                                >
+                            </li>
+                            <li class="nav-item m-2">
+                                <a class="nav-link active" href="#"
+                                    >Đặt phòng</a
+                                >
+                            </li>
+                            <li class="nav-item m-2">
+                                <button
+                                    type="button"
+                                    class="btn btn-primary btn-booking"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#bookingModal"
+                                >
+                                    Đặt phòng ngay
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 150px">
+            <div
+                class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2"
+            >
+                <h2>Quản Lý Đặt Phòng</h2>
+                <button
+                    class="btn btn-success btn-lg shadow"
+                    data-bs-toggle="modal"
+                    data-bs-target="#bookingModal"
+                >
+                    <i class="fa fa-plus-circle me-2"></i>Tạo Đơn Đặt Phòng Mới
+                </button>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div
+                            class="card-header bg-white py-3 d-flex justify-content-between align-items-center"
+                        >
+                            <h5 class="mb-0">Danh sách đơn đã đặt</h5>
+                            <div>
+                                <button
+                                    class="btn btn-outline-danger btn-sm me-2"
+                                    id="btnClearHistory"
+                                >
+                                    <i class="fa fa-trash me-1"></i> Xóa tất cả
+                                </button>
+                                <span class="badge bg-primary rounded-pill"
+                                    >Tổng: <span id="total-count">0</span></span
+                                >
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table
+                                    class="table table-hover table-striped mb-0"
+                                    id="historyTable"
+                                >
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Họ Tên</th>
+                                            <th scope="col">Số điện thoại</th>
+                                            <th scope="col">Ngày nhận</th>
+                                            <th scope="col">Ngày trả</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Ghi chú</th>
+                                            <th scope="col">Ngày tạo đơn</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Booking -->
+        <div
+            class="modal fade"
+            id="bookingModal"
+            tabindex="-1"
+            aria-labelledby="bookingModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="bookingModalLabel">
+                            Thông Tin Đặt Phòng
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close btn-close-white"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="bookingForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="clientName" class="form-label"
+                                        >Họ và Tên
+                                        <span class="text-danger"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="clientName"
+                                        placeholder="VD: Nguyễn Văn A"
+                                        required
+                                    />
+                                    <div class="invalid-feedback">
+                                        Tên phải viết hoa chữ cái đầu (VD:
+                                        Nguyễn Văn A).
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="clientPhone" class="form-label"
+                                        >Số điện thoại
+                                        <span class="text-danger"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <input
+                                        type="tel"
+                                        class="form-control"
+                                        id="clientPhone"
+                                        placeholder="VD: 0912345678"
+                                        required
+                                    />
+                                    <div class="invalid-feedback">
+                                        Số điện thoại phải là 10 số và bắt đầu
+                                        bằng số 0.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- KHU VỰC CHỌN NGÀY -->
+                            <div class="row bg-light p-2 rounded mb-3 border">
+                                <div class="col-md-6 mb-2">
+                                    <label
+                                        for="clientCheckin"
+                                        class="form-label fw-bold"
+                                        >Ngày nhận phòng
+                                        <span class="text-danger"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <input
+                                        type="date"
+                                        class="form-control"
+                                        id="clientCheckin"
+                                        required
+                                    />
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorCheckin"
+                                    >
+                                        Vui lòng chọn ngày nhận hợp lệ.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label
+                                        for="clientCheckout"
+                                        class="form-label fw-bold"
+                                        >Ngày trả phòng
+                                        <span class="text-danger"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <input
+                                        type="date"
+                                        class="form-control"
+                                        id="clientCheckout"
+                                        required
+                                    />
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorCheckout"
+                                    >
+                                        Ngày trả phải SAU ngày nhận phòng.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="clientEmail" class="form-label"
+                                    >Email</label
+                                >
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="clientEmail"
+                                    placeholder="name@example.com"
+                                />
+                                <div class="invalid-feedback">
+                                    Email không đúng định dạng.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="clientNote" class="form-label"
+                                    >Ghi chú thêm</label
+                                >
+                                <textarea
+                                    class="form-control"
+                                    id="clientNote"
+                                    rows="3"
+                                    placeholder="Yêu cầu đặc biệt..."
+                                ></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Hủy
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="btnConfirmBooking"
+                        >
+                            Xác nhận
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                loadHistory();
+
+                // === REGEX ===
+                const regexName =
+                    /^[A-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪỬỮỰỲỴÝỶỸ][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵýỷỹ]*(\s[A-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪỬỮỰỲỴÝỶỸ][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵýỷỹ]*)*$/;
+                const regexPhone = /^0\d{9}$/;
+                const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                // === VALIDATE INPUT ===
+                function validateInput(selector, regex) {
+                    var value = $(selector).val().trim();
+                    var isValid = false;
+                    if (selector === "#clientEmail" && value === "") {
+                        isValid = true;
+                    } else {
+                        isValid = regex.test(value);
+                    }
+                    toggleError(selector, isValid);
+                    return isValid;
+                }
+
+                // === VALIDATE DATES (NGÀY) ===
+                function validateDates() {
+                    var checkinVal = $("#clientCheckin").val();
+                    var checkoutVal = $("#clientCheckout").val();
+
+                    // 1. Kiểm tra rỗng
+                    if (!checkinVal) {
+                        $("#clientCheckin").addClass("is-invalid");
+                        return false;
+                    } else {
+                        $("#clientCheckin")
+                            .removeClass("is-invalid")
+                            .addClass("is-valid");
+                    }
+
+                    if (!checkoutVal) {
+                        $("#clientCheckout").addClass("is-invalid");
+                        $("#errorCheckout").text("Vui lòng chọn ngày trả.");
+                        return false;
+                    }
+
+                    // 2. So sánh ngày
+                    var checkinDate = new Date(checkinVal);
+                    var checkoutDate = new Date(checkoutVal);
+
+                    // Reset thông báo lỗi mặc định
+                    $("#errorCheckout").text(
+                        "Ngày trả phải SAU ngày nhận phòng."
+                    );
+
+                    if (checkoutDate <= checkinDate) {
+                        $("#clientCheckout")
+                            .addClass("is-invalid")
+                            .removeClass("is-valid");
+                        $("#clientCheckin")
+                            .addClass("is-invalid")
+                            .removeClass("is-valid"); // Báo đỏ cả 2 để chú ý
+                        $("#errorCheckin").text(
+                            "Ngày nhận phải TRƯỚC ngày trả."
+                        );
+                        return false;
+                    } else {
+                        $("#clientCheckout")
+                            .removeClass("is-invalid")
+                            .addClass("is-valid");
+                        $("#clientCheckin")
+                            .removeClass("is-invalid")
+                            .addClass("is-valid");
+                        return true;
+                    }
+                }
+
+                function toggleError(selector, isValid) {
+                    if (!isValid) {
+                        $(selector)
+                            .addClass("is-invalid")
+                            .removeClass("is-valid");
+                    } else {
+                        $(selector)
+                            .removeClass("is-invalid")
+                            .addClass("is-valid");
+                    }
+                }
+
+                // === EVENTS ===
+                $("#clientName").blur(function () {
+                    validateInput("#clientName", regexName);
+                });
+                $("#clientPhone").blur(function () {
+                    validateInput("#clientPhone", regexPhone);
+                });
+                $("#clientEmail").blur(function () {
+                    validateInput("#clientEmail", regexEmail);
+                });
+
+                // Kiểm tra ngày khi người dùng thay đổi giá trị
+                $("#clientCheckin, #clientCheckout").change(function () {
+                    validateDates();
+                });
+
+                $("#btnClearHistory").click(function () {
+                    var history =
+                        JSON.parse(localStorage.getItem("bookingHistory")) ||
+                        [];
+                    if (history.length === 0) {
+                        alert("Không có dữ liệu để xóa!");
+                        return;
+                    }
+                    if (
+                        confirm(
+                            "Bạn có chắc chắn muốn xóa toàn bộ lịch sử không?"
+                        )
+                    ) {
+                        localStorage.removeItem("bookingHistory");
+                        loadHistory();
+                    }
+                });
+
+                $("#btnConfirmBooking").click(function () {
+                    // 1. Validate toàn bộ
+                    var isNameValid = validateInput("#clientName", regexName);
+                    var isPhoneValid = validateInput(
+                        "#clientPhone",
+                        regexPhone
+                    );
+                    var isEmailValid = validateInput(
+                        "#clientEmail",
+                        regexEmail
+                    );
+                    var isDatesValid = validateDates(); // Validate ngày
+
+                    if (
+                        !isNameValid ||
+                        !isPhoneValid ||
+                        !isEmailValid ||
+                        !isDatesValid
+                    ) {
+                        alert(
+                            "Vui lòng kiểm tra lại thông tin nhập lỗi màu đỏ!"
+                        );
+                        return;
+                    }
+
+                    // 2. Lấy dữ liệu
+                    var name = $("#clientName").val().trim();
+                    var phone = $("#clientPhone").val().trim();
+                    var email = $("#clientEmail").val().trim();
+                    var checkin = $("#clientCheckin").val();
+                    var checkout = $("#clientCheckout").val();
+                    var note = $("#clientNote").val().trim();
+
+                    // Format ngày để hiển thị đẹp hơn (DD/MM/YYYY)
+                    const formatDate = (dateString) => {
+                        const date = new Date(dateString);
+                        return date.toLocaleDateString("vi-VN");
+                    };
+
+                    var bookingData = {
+                        name: name,
+                        phone: phone,
+                        email: email,
+                        checkin: formatDate(checkin),
+                        checkout: formatDate(checkout),
+                        note: note,
+                        date: new Date().toLocaleString("vi-VN"),
+                    };
+
+                    var currentHistory =
+                        JSON.parse(localStorage.getItem("bookingHistory")) ||
+                        [];
+                    currentHistory.push(bookingData);
+                    localStorage.setItem(
+                        "bookingHistory",
+                        JSON.stringify(currentHistory)
+                    );
+
+                    alert("Đặt phòng thành công!");
+                    $("#bookingModal").modal("hide");
+                    $("#bookingForm")[0].reset();
+                    $(".form-control").removeClass("is-valid is-invalid");
+                    loadHistory();
+                });
+            });
+
+            function loadHistory() {
+                var history =
+                    JSON.parse(localStorage.getItem("bookingHistory")) || [];
+                var tableBody = $("#historyTable tbody");
+                $("#total-count").text(history.length);
+                tableBody.empty();
+
+                if (history.length === 0) {
+                    tableBody.append(
+                        '<tr><td colspan="8" class="text-center py-4 text-muted"><i>Chưa có lịch sử đặt phòng nào. Hãy tạo đơn mới!</i></td></tr>'
+                    );
+                    return;
+                }
+
+                [...history].reverse().forEach(function (item, index) {
+                    var row = `
+                    <tr>
+                        <th scope="row">${history.length - index}</th> 
+                        <td><strong>${item.name}</strong></td>
+                        <td>${item.phone}</td>
+                        <td class="text-primary fw-bold">${
+                            item.checkin || "-"
+                        }</td>
+                        <td class="text-primary fw-bold">${
+                            item.checkout || "-"
+                        }</td>
+                        <td>${item.email || "-"}</td>
+                        <td>${item.note || "-"}</td>
+                        <td><small class="text-muted">${item.date}</small></td>
+                    </tr>
+                `;
+                    tableBody.append(row);
+                });
+            }
+        </script>
+    </body>
+</html>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Grand Luxe</title>
+        <title>Grand Luxe - Home</title>
 
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/style_project.css" />
@@ -50,19 +50,12 @@
                                 <a class="nav-link" href="#contact">Liên hệ</a>
                             </li>
                             <li class="nav-item m-2">
-                                <button
-                                    type="button"
+                                <a
+                                    href="../html/booking.html"
                                     class="btn btn-primary btn-booking"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#bookingModal"
                                 >
                                     Đặt phòng ngay
-                                </button>
-                            </li>
-                            <li class="nav-item m-2">
-                                <a class="nav-link" href="../html/history.html"
-                                    >Lịch sử</a
-                                >
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -82,7 +75,7 @@
             style="margin-top: -50px; z-index: 10"
         >
             <div class="card shadow p-4 border-0">
-                <form>
+                <form action="../html/rooms.html">
                     <div class="row g-3">
                         <div class="col-md-3">
                             <label class="form-label">Ngày nhận phòng</label>
@@ -175,7 +168,7 @@
                                         >1.500.000đ / đêm</span
                                     >
                                     <a
-                                        href="#"
+                                        href="../html/booking.html"
                                         class="btn btn-outline-dark btn-sm"
                                         >Chi tiết</a
                                     >
@@ -203,7 +196,7 @@
                                         >2.500.000đ / đêm</span
                                     >
                                     <a
-                                        href="#"
+                                        href="../html/booking.html"
                                         class="btn btn-outline-dark btn-sm"
                                         >Chi tiết</a
                                     >
@@ -230,7 +223,7 @@
                                         >3.200.000đ / đêm</span
                                     >
                                     <a
-                                        href="#"
+                                        href="../html/booking.html"
                                         class="btn btn-outline-dark btn-sm"
                                         >Chi tiết</a
                                     >
@@ -246,6 +239,7 @@
             <div class="container text-center">
                 <h2 class="mb-5">Tiện Ích Dịch Vụ</h2>
                 <div class="row g-4">
+                    <!-- Dịch vụ items (giữ nguyên, chỉ thêm placeholder ảnh) -->
                     <div class="col-6 col-md-2">
                         <div
                             class="p-3 border rounded bg-white shadow-sm h-100"
@@ -370,138 +364,5 @@
                 </div>
             </div>
         </div>
-
-        <div
-            class="modal fade"
-            id="bookingModal"
-            tabindex="-1"
-            aria-labelledby="bookingModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-primary text-white">
-                        <h5 class="modal-title" id="bookingModalLabel">
-                            Thông Tin Đặt Phòng
-                        </h5>
-                        <button
-                            type="button"
-                            class="btn-close btn-close-white"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        ></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="clientName" class="form-label"
-                                    >Họ và Tên</label
-                                >
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="clientName"
-                                    placeholder="Nhập họ tên của bạn"
-                                    required
-                                />
-                            </div>
-                            <div class="mb-3">
-                                <label for="clientPhone" class="form-label"
-                                    >Số điện thoại</label
-                                >
-                                <input
-                                    type="tel"
-                                    class="form-control"
-                                    id="clientPhone"
-                                    placeholder="Nhập số điện thoại"
-                                    required
-                                />
-                            </div>
-                            <div class="mb-3">
-                                <label for="clientEmail" class="form-label"
-                                    >Email</label
-                                >
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    id="clientEmail"
-                                    placeholder="Nhập địa chỉ email"
-                                />
-                            </div>
-                            <div class="mb-3">
-                                <label for="clientNote" class="form-label"
-                                    >Ghi chú thêm</label
-                                >
-                                <textarea
-                                    class="form-control"
-                                    id="clientNote"
-                                    rows="3"
-                                    placeholder="Yêu cầu đặc biệt..."
-                                ></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                        >
-                            Hủy
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                            Xác nhận
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            $(document).ready(function () {
-                // 1. Xử lý sự kiện khi bấm nút "Xác nhận" trong Modal
-                // Lưu ý: Bạn cần thêm id="btnConfirmBooking" vào nút Xác nhận trong Modal HTML trước nhé
-                // Ví dụ: <button type="button" class="btn btn-primary" id="btnConfirmBooking">Xác nhận</button>
-
-                // Ở đây tôi viết code giả định bạn đã thêm ID đó, hoặc tôi sẽ dùng selector theo class
-                $(".modal-footer .btn-primary").click(function () {
-                    // Lấy dữ liệu từ form
-                    var bookingData = {
-                        name: $("#clientName").val(),
-                        phone: $("#clientPhone").val(),
-                        email: $("#clientEmail").val(),
-                        note: $("#clientNote").val(),
-                        date: new Date().toLocaleString(), // Lưu thời điểm đặt
-                    };
-
-                    // Kiểm tra dữ liệu rỗng (cơ bản)
-                    if (!bookingData.name || !bookingData.phone) {
-                        alert("Vui lòng nhập tên và số điện thoại!");
-                        return;
-                    }
-
-                    // Lấy dữ liệu cũ từ LocalStorage (nếu có)
-                    var currentHistory =
-                        JSON.parse(localStorage.getItem("bookingHistory")) ||
-                        [];
-
-                    // Thêm dữ liệu mới vào mảng
-                    currentHistory.push(bookingData);
-
-                    // Lưu ngược lại vào LocalStorage
-                    localStorage.setItem(
-                        "bookingHistory",
-                        JSON.stringify(currentHistory)
-                    );
-
-                    // Thông báo và đóng modal
-                    alert("Đặt phòng thành công! Kiểm tra trang Lịch sử.");
-                    $("#bookingModal").modal("hide");
-
-                    // Reset form
-                    $("form")[1].reset(); // Reset form trong modal (giả định là form thứ 2 trong trang)
-                });
-            });
-        </script>
     </body>
 </html>

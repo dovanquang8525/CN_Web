@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Room</title>
+
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/style_project.css" />
+
+        <script src="../js/jquery-3.7.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="header-area">
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"
+            >
+                <div class="container">
+                    <a class="navbar-brand" href="home.html">
+                        <img
+                            src="../img/logo_home.png"
+                            alt="Grand Luxe Logo"
+                            height="80"
+                        />
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item m-2">
+                                <a class="nav-link" href="../html/home.html"
+                                    >Trang chủ</a
+                                >
+                            </li>
+                            <li class="nav-item m-2">
+                                <a
+                                    href="../html/booking.html"
+                                    class="btn btn-primary btn-booking"
+                                >
+                                    Đặt phòng ngay
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- SEARCH RESULT HEADER -->
+        <div class="bg-primary py-5 mt-5 text-white">
+            <div class="container mt-4">
+                <h1 class="display-5 fw-bold">Kết quả tìm kiếm</h1>
+                <p class="lead" id="search-info">
+                    Đang kiểm tra tình trạng phòng...
+                </p>
+                <div class="bg-white p-3 rounded text-dark shadow-sm mt-3">
+                    <form action="../html/rooms.html" method="GET">
+                        <div class="row g-2">
+                            <div class="col-md-3">
+                                <small>Ngày nhận</small>
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    name="checkin"
+                                    id="inputCheckin"
+                                    required
+                                />
+                            </div>
+                            <div class="col-md-3">
+                                <small>Ngày trả</small>
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    name="checkout"
+                                    id="inputCheckout"
+                                    required
+                                />
+                            </div>
+                            <div class="col-md-3">
+                                <small>Số người</small>
+                                <select
+                                    class="form-select"
+                                    name="guests"
+                                    id="inputGuests"
+                                >
+                                    <option value="1">1 Người</option>
+                                    <option value="2">2 Người</option>
+                                    <option value="family">Gia đình</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 d-flex align-items-end">
+                                <button class="btn btn-dark w-100">
+                                    Tìm lại
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIST ROOMS -->
+        <div class="py-5 bg-light">
+            <div class="container">
+                <div class="mb-4">
+                    <h3
+                        class="text-primary border-start border-4 border-primary ps-3"
+                    >
+                        Phòng có sẵn (3)
+                    </h3>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm room-card">
+                            <div class="position-relative">
+                                <img
+                                    src="../img/deluxe-room.png"
+                                    class="card-img-top"
+                                    alt="Deluxe Room"
+                                />
+                                <span
+                                    class="position-absolute top-0 end-0 bg-success text-white px-3 py-1 m-2 rounded-pill small"
+                                    >Còn trống</span
+                                >
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Phòng Deluxe</h5>
+                                <p class="card-text text-muted small">
+                                    <i class="fa fa-bed me-1"></i> 1 Giường đôi
+                                    | <i class="fa fa-expand me-1"></i> 35m2
+                                </p>
+                                <p class="card-text">
+                                    View hướng biển, ban công rộng, bồn tắm nằm.
+                                </p>
+                                <div
+                                    class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top"
+                                >
+                                    <div>
+                                        <div class="fw-bold text-primary fs-5">
+                                            2.000.000đ<small
+                                                class="text-muted fs-6"
+                                                >/ đêm</small
+                                            >
+                                        </div>
+                                    </div>
+                                    <a
+                                        href="../html/booking.html"
+                                        class="btn btn-primary"
+                                        >Đặt ngay</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm room-card">
+                            <div class="position-relative">
+                                <img
+                                    src="../img/suite-room.png"
+                                    class="card-img-top"
+                                    alt="Suite Room"
+                                />
+                                <span
+                                    class="position-absolute top-0 end-0 bg-success text-white px-3 py-1 m-2 rounded-pill small"
+                                    >Còn trống</span
+                                >
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Phòng Suite</h5>
+                                <p class="card-text text-muted small">
+                                    <i class="fa fa-bed me-1"></i> 1 King size |
+                                    <i class="fa fa-expand me-1"></i> 50m2
+                                </p>
+                                <p class="card-text">
+                                    Không gian sang trọng, phòng khách riêng,
+                                    minibar miễn phí.
+                                </p>
+                                <div
+                                    class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top"
+                                >
+                                    <div>
+                                        <div class="fw-bold text-primary fs-5">
+                                            3.000.000đ<small
+                                                class="text-muted fs-6"
+                                                >/ đêm</small
+                                            >
+                                        </div>
+                                    </div>
+                                    <a
+                                        href="../html/booking.html"
+                                        class="btn btn-primary"
+                                        >Đặt ngay</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm room-card">
+                            <div class="position-relative">
+                                <img
+                                    src="../img/family-room.png"
+                                    class="card-img-top"
+                                    alt="Family Room"
+                                />
+                                <span
+                                    class="position-absolute top-0 end-0 bg-success text-white px-3 py-1 m-2 rounded-pill small"
+                                    >Còn trống</span
+                                >
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Phòng Gia Đình</h5>
+                                <p class="card-text text-muted small">
+                                    <i class="fa fa-bed me-1"></i> 2 Giường lớn
+                                    | <i class="fa fa-expand me-1"></i> 65m2
+                                </p>
+                                <p class="card-text">
+                                    Phù hợp cho gia đình 4 người, bếp nhỏ tiện
+                                    lợi.
+                                </p>
+                                <div
+                                    class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top"
+                                >
+                                    <div>
+                                        <div class="fw-bold text-primary fs-5">
+                                            4.000.000đ<small
+                                                class="text-muted fs-6"
+                                                >/ đêm</small
+                                            >
+                                        </div>
+                                    </div>
+                                    <a
+                                        href="../html/booking.html"
+                                        class="btn btn-primary"
+                                        >Đặt ngay</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                // 1. Lấy tham số từ URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const checkin = urlParams.get("checkin");
+                const checkout = urlParams.get("checkout");
+                const guests = urlParams.get("guests");
+
+                // 2. Hiển thị thông báo
+                if (checkin && checkout) {
+                    const formatDate = (dateString) => {
+                        if (!dateString) return "";
+                        const parts = dateString.split("-");
+                        return `${parts[2]}/${parts[1]}/${parts[0]}`;
+                    };
+
+                    let guestText =
+                        guests === "family" ? "Gia đình" : guests + " Người";
+
+                    $("#search-info").html(
+                        `Kết quả cho: <strong>${formatDate(
+                            checkin
+                        )}</strong> đến <strong>${formatDate(
+                            checkout
+                        )}</strong> (${guestText})`
+                    );
+
+                    // Điền lại dữ liệu vào form tìm lại để khách đỡ phải nhập lại
+                    $("#inputCheckin").val(checkin);
+                    $("#inputCheckout").val(checkout);
+                    $("#inputGuests").val(guests);
+                } else {
+                    $("#search-info").text("Hiển thị tất cả phòng hiện có.");
+                }
+            });
+        </script>
+    </body>
+</html>
