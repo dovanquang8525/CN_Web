@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Room</title>
+        <title>Kết Quả Tìm Kiếm Phòng</title>
 
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/style_project.css" />
@@ -17,7 +17,7 @@
                 class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"
             >
                 <div class="container">
-                    <a class="navbar-brand" href="home.html">
+                    <a class="navbar-brand" href="../html/home.html">
                         <img
                             src="../img/logo_home.png"
                             alt="Grand Luxe Logo"
@@ -33,7 +33,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
+                        <ul class="navbar-nav ms-auto align-items-center">
                             <li class="nav-item m-2">
                                 <a class="nav-link" href="../html/home.html"
                                     >Trang chủ</a
@@ -43,9 +43,8 @@
                                 <a
                                     href="../html/booking.html"
                                     class="btn btn-primary btn-booking"
+                                    >Đặt phòng ngay</a
                                 >
-                                    Đặt phòng ngay
-                                </a>
                             </li>
                         </ul>
                     </div>
@@ -61,7 +60,11 @@
                     Đang kiểm tra tình trạng phòng...
                 </p>
                 <div class="bg-white p-3 rounded text-dark shadow-sm mt-3">
-                    <form action="../html/rooms.html" method="GET">
+                    <form
+                        action="../html/rooms.html"
+                        method="GET"
+                        id="searchForm"
+                    >
                         <div class="row g-2">
                             <div class="col-md-3">
                                 <small>Ngày nhận</small>
@@ -96,7 +99,10 @@
                                 </select>
                             </div>
                             <div class="col-md-3 d-flex align-items-end">
-                                <button class="btn btn-dark w-100">
+                                <button
+                                    type="submit"
+                                    class="btn btn-dark w-100"
+                                >
                                     Tìm lại
                                 </button>
                             </div>
@@ -113,11 +119,12 @@
                     <h3
                         class="text-primary border-start border-4 border-primary ps-3"
                     >
-                        Phòng có sẵn (3)
+                        Phòng có sẵn
                     </h3>
                 </div>
 
                 <div class="row g-4">
+                    <!-- ROOM 1: DELUXE -->
                     <div class="col-md-4">
                         <div class="card h-100 border-0 shadow-sm room-card">
                             <div class="position-relative">
@@ -127,9 +134,11 @@
                                     alt="Deluxe Room"
                                 />
                                 <span
+                                    id="badge-Phòng Deluxe"
                                     class="position-absolute top-0 end-0 bg-success text-white px-3 py-1 m-2 rounded-pill small"
-                                    >Còn trống</span
                                 >
+                                    Đang kiểm tra...
+                                </span>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Phòng Deluxe</h5>
@@ -145,7 +154,7 @@
                                 >
                                     <div>
                                         <div class="fw-bold text-primary fs-5">
-                                            2.000.000đ<small
+                                            1.500.000đ<small
                                                 class="text-muted fs-6"
                                                 >/ đêm</small
                                             >
@@ -153,7 +162,8 @@
                                     </div>
                                     <a
                                         href="../html/booking.html"
-                                        class="btn btn-primary"
+                                        class="btn btn-primary btn-book"
+                                        id="btn-Phòng Deluxe"
                                         >Đặt ngay</a
                                     >
                                 </div>
@@ -161,6 +171,7 @@
                         </div>
                     </div>
 
+                    <!-- ROOM 2: SUITE -->
                     <div class="col-md-4">
                         <div class="card h-100 border-0 shadow-sm room-card">
                             <div class="position-relative">
@@ -170,9 +181,11 @@
                                     alt="Suite Room"
                                 />
                                 <span
+                                    id="badge-Phòng Suite"
                                     class="position-absolute top-0 end-0 bg-success text-white px-3 py-1 m-2 rounded-pill small"
-                                    >Còn trống</span
                                 >
+                                    Đang kiểm tra...
+                                </span>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Phòng Suite</h5>
@@ -189,7 +202,7 @@
                                 >
                                     <div>
                                         <div class="fw-bold text-primary fs-5">
-                                            3.000.000đ<small
+                                            2.500.000đ<small
                                                 class="text-muted fs-6"
                                                 >/ đêm</small
                                             >
@@ -197,7 +210,8 @@
                                     </div>
                                     <a
                                         href="../html/booking.html"
-                                        class="btn btn-primary"
+                                        class="btn btn-primary btn-book"
+                                        id="btn-Phòng Suite"
                                         >Đặt ngay</a
                                     >
                                 </div>
@@ -205,6 +219,7 @@
                         </div>
                     </div>
 
+                    <!-- ROOM 3: FAMILY -->
                     <div class="col-md-4">
                         <div class="card h-100 border-0 shadow-sm room-card">
                             <div class="position-relative">
@@ -214,9 +229,11 @@
                                     alt="Family Room"
                                 />
                                 <span
+                                    id="badge-Phòng Gia Đình"
                                     class="position-absolute top-0 end-0 bg-success text-white px-3 py-1 m-2 rounded-pill small"
-                                    >Còn trống</span
                                 >
+                                    Đang kiểm tra...
+                                </span>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Phòng Gia Đình</h5>
@@ -233,7 +250,7 @@
                                 >
                                     <div>
                                         <div class="fw-bold text-primary fs-5">
-                                            4.000.000đ<small
+                                            3.200.000đ<small
                                                 class="text-muted fs-6"
                                                 >/ đêm</small
                                             >
@@ -241,7 +258,8 @@
                                     </div>
                                     <a
                                         href="../html/booking.html"
-                                        class="btn btn-primary"
+                                        class="btn btn-primary btn-book"
+                                        id="btn-Phòng Gia Đình"
                                         >Đặt ngay</a
                                     >
                                 </div>
@@ -254,38 +272,156 @@
 
         <script>
             $(document).ready(function () {
-                // 1. Lấy tham số từ URL
+                // 1. SỐ PHÒNG CỦA KHÁCH SẠN
+                const TOTAL_ROOMS = {
+                    "Phòng Deluxe": 5,
+                    "Phòng Suite": 3,
+                    "Phòng Gia Đình": 2,
+                };
+
+                // 2. Lấy tham số tìm kiếm từ URL
                 const urlParams = new URLSearchParams(window.location.search);
-                const checkin = urlParams.get("checkin");
-                const checkout = urlParams.get("checkout");
-                const guests = urlParams.get("guests");
+                const checkinParam = urlParams.get("checkin");
+                const checkoutParam = urlParams.get("checkout");
+                const guestsParam = urlParams.get("guests");
 
-                // 2. Hiển thị thông báo
-                if (checkin && checkout) {
-                    const formatDate = (dateString) => {
-                        if (!dateString) return "";
-                        const parts = dateString.split("-");
-                        return `${parts[2]}/${parts[1]}/${parts[0]}`;
-                    };
-
-                    let guestText =
-                        guests === "family" ? "Gia đình" : guests + " Người";
-
-                    $("#search-info").html(
-                        `Kết quả cho: <strong>${formatDate(
-                            checkin
-                        )}</strong> đến <strong>${formatDate(
-                            checkout
-                        )}</strong> (${guestText})`
-                    );
-
-                    // Điền lại dữ liệu vào form tìm lại để khách đỡ phải nhập lại
-                    $("#inputCheckin").val(checkin);
-                    $("#inputCheckout").val(checkout);
-                    $("#inputGuests").val(guests);
-                } else {
-                    $("#search-info").text("Hiển thị tất cả phòng hiện có.");
+                if (checkinParam) $("#inputCheckin").val(checkinParam);
+                if (checkoutParam) $("#inputCheckout").val(checkoutParam);
+                if (guestsParam) $("#inputGuests").val(guestsParam);
+                function parseInputDate(dateStr) {
+                    if (!dateStr) return null;
+                    const parts = dateStr.split("-");
+                    return new Date(parts[0], parts[1] - 1, parts[2]);
                 }
+
+                function parseViDate(dateStr) {
+                    if (!dateStr) return null;
+                    const parts = dateStr.split("/");
+                    if (parts.length === 3) {
+                        return new Date(parts[2], parts[1] - 1, parts[0]);
+                    }
+                    return null;
+                }
+                function isDateOverlap(
+                    searchStart,
+                    searchEnd,
+                    bookStart,
+                    bookEnd
+                ) {
+                    return searchStart < bookEnd && searchEnd > bookStart;
+                }
+
+                function checkAvailability() {
+                    let searchStart, searchEnd;
+
+                    if (checkinParam && checkoutParam) {
+                        searchStart = parseInputDate(checkinParam);
+                        searchEnd = parseInputDate(checkoutParam);
+
+                        // Hiển thị thông tin tìm kiếm
+                        const formatDate = (date) =>
+                            date ? date.toLocaleDateString("vi-VN") : "";
+                        let guestText =
+                            guestsParam === "family"
+                                ? "Gia đình"
+                                : (guestsParam || 1) + " Người";
+                        $("#search-info").html(
+                            `Tìm phòng từ: <strong>${formatDate(
+                                searchStart
+                            )}</strong> đến <strong>${formatDate(
+                                searchEnd
+                            )}</strong> (${guestText})`
+                        );
+                    } else {
+                        // Mặc định: Hôm nay -> Ngày mai
+                        const now = new Date();
+                        searchStart = new Date(
+                            now.getFullYear(),
+                            now.getMonth(),
+                            now.getDate()
+                        );
+                        searchEnd = new Date(
+                            now.getFullYear(),
+                            now.getMonth(),
+                            now.getDate() + 1
+                        );
+                        $("#search-info").text(
+                            "Đang hiển thị tình trạng phòng hôm nay."
+                        );
+                    }
+
+                    // Lấy lịch sử đặt phòng từ LocalStorage
+                    const bookingHistory =
+                        JSON.parse(localStorage.getItem("bookingHistory")) ||
+                        [];
+
+                    // Tạo bản sao số lượng phòng hiện có để trừ dần
+                    let currentAvailability = { ...TOTAL_ROOMS };
+
+                    // Duyệt qua lịch sử để trừ số phòng
+                    bookingHistory.forEach((booking) => {
+                        // Bỏ qua nếu dữ liệu phòng bị thiếu hoặc sai tên
+                        if (
+                            !booking.room ||
+                            !currentAvailability.hasOwnProperty(booking.room)
+                        )
+                            return;
+
+                        let bookStart = parseViDate(booking.checkin);
+                        let bookEnd = parseViDate(booking.checkout);
+
+                        if (bookStart && bookEnd) {
+                            // Nếu khoảng thời gian trùng nhau -> Phòng đó đã bận
+                            if (
+                                isDateOverlap(
+                                    searchStart,
+                                    searchEnd,
+                                    bookStart,
+                                    bookEnd
+                                )
+                            ) {
+                                if (currentAvailability[booking.room] > 0) {
+                                    currentAvailability[booking.room]--;
+                                }
+                            }
+                        }
+                    });
+
+                    // Cập nhật giao diện (UI)
+                    Object.keys(TOTAL_ROOMS).forEach((roomName) => {
+                        const count = currentAvailability[roomName];
+                        // Xử lý ID có dấu cách cho jQuery
+                        const badgeEl = $(`[id='badge-${roomName}']`);
+                        const btnEl = $(`[id='btn-${roomName}']`);
+
+                        if (count > 0) {
+                            // CÒN PHÒNG
+                            badgeEl
+                                .removeClass("bg-secondary bg-danger")
+                                .addClass("bg-success");
+                            badgeEl.text(`Còn ${count} phòng`);
+
+                            btnEl
+                                .removeClass("btn-secondary disabled")
+                                .addClass("btn-primary");
+                            btnEl.text("Đặt ngay");
+                            btnEl.attr("href", "booking.html");
+                        } else {
+                            // HẾT PHÒNG
+                            badgeEl
+                                .removeClass("bg-success bg-secondary")
+                                .addClass("bg-danger");
+                            badgeEl.text("Hết phòng");
+
+                            btnEl
+                                .removeClass("btn-primary")
+                                .addClass("btn-secondary disabled");
+                            btnEl.text("Đã hết");
+                            btnEl.removeAttr("href");
+                        }
+                    });
+                }
+                checkAvailability();
             });
         </script>
     </body>
