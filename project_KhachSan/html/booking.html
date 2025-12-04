@@ -7,6 +7,12 @@
 
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/style_project.css" />
+        <!-- FontAwesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+
         <script src="../js/jquery-3.7.1.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
     </head>
@@ -16,7 +22,7 @@
                 class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"
             >
                 <div class="container">
-                    <a class="navbar-brand" href="home.html">
+                    <a class="navbar-brand" href="../html/home.html">
                         <img
                             src="../img/logo_home.png"
                             alt="Grand Luxe Logo"
@@ -98,11 +104,14 @@
                                             <th scope="col">#</th>
                                             <th scope="col">Họ Tên</th>
                                             <th scope="col">Số điện thoại</th>
+                                            <th scope="col">Loại phòng</th>
+                                            <th scope="col" class="text-center">
+                                                Số khách
+                                            </th>
                                             <th scope="col">Ngày nhận</th>
                                             <th scope="col">Ngày trả</th>
-                                            <th scope="col">Email</th>
                                             <th scope="col">Ghi chú</th>
-                                            <th scope="col">Ngày tạo đơn</th>
+                                            <th scope="col">Ngày tạo</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -123,11 +132,11 @@
             aria-hidden="true"
         >
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <!-- Thêm modal-lg cho rộng rãi -->
-                <div class="modal-content">
+                <div class="modal-content border-0 shadow-lg">
                     <div class="modal-header bg-primary text-white">
-                        <h5 class="modal-title" id="bookingModalLabel">
-                            Thông Tin Đặt Phòng
+                        <h5 class="modal-title fw-bold" id="bookingModalLabel">
+                            <i class="fa-solid fa-hotel me-2"></i>Thông Tin Đặt
+                            Phòng
                         </h5>
                         <button
                             type="button"
@@ -136,138 +145,236 @@
                             aria-label="Close"
                         ></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body p-4">
                         <form id="bookingForm" novalidate>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="clientName" class="form-label"
+                            <!-- Row 1: Thông tin cá nhân -->
+                            <h6 class="text-primary mb-3 border-bottom pb-2">
+                                <i class="fa-solid fa-user me-2"></i>Thông tin
+                                khách hàng
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label
+                                        for="clientName"
+                                        class="form-label fw-bold"
                                         >Họ và Tên
                                         <span class="text-danger"
                                             >*</span
                                         ></label
                                     >
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="clientName"
-                                        placeholder="VD: Nguyễn Văn A"
-                                        required
-                                    />
-                                    <div class="invalid-feedback">
-                                        Tên phải viết hoa chữ cái đầu (VD:
-                                        Nguyễn Văn A).
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text bg-light"
+                                            ><i class="fa-solid fa-user-pen"></i
+                                        ></span>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="clientName"
+                                            placeholder="VD: Nguyễn Văn A"
+                                            required
+                                        />
+                                        <div class="invalid-feedback">
+                                            Tên phải viết hoa chữ cái đầu (VD:
+                                            Nguyễn Văn A).
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="clientPhone" class="form-label"
+                                <div class="col-md-6">
+                                    <label
+                                        for="clientPhone"
+                                        class="form-label fw-bold"
                                         >Số điện thoại
                                         <span class="text-danger"
                                             >*</span
                                         ></label
                                     >
-                                    <input
-                                        type="tel"
-                                        class="form-control"
-                                        id="clientPhone"
-                                        placeholder="VD: 0912345678"
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text bg-light"
+                                            ><i class="fa-solid fa-phone"></i
+                                        ></span>
+                                        <input
+                                            type="tel"
+                                            class="form-control"
+                                            id="clientPhone"
+                                            placeholder="VD: 0912345678"
+                                            required
+                                        />
+                                        <div class="invalid-feedback">
+                                            Số điện thoại phải là 10 số và bắt
+                                            đầu bằng số 0.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label
+                                        for="clientEmail"
+                                        class="form-label fw-bold"
+                                        >Email</label
+                                    >
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text bg-light"
+                                            ><i class="fa-solid fa-envelope"></i
+                                        ></span>
+                                        <input
+                                            type="email"
+                                            class="form-control"
+                                            id="clientEmail"
+                                            placeholder="name@example.com"
+                                        />
+                                        <div class="invalid-feedback">
+                                            Email không đúng định dạng.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 2: Thông tin phòng & thời gian -->
+                            <h6 class="text-primary mb-3 border-bottom pb-2">
+                                <i class="fa-solid fa-calendar-days me-2"></i
+                                >Chi tiết đặt phòng
+                            </h6>
+                            <div
+                                class="bg-light p-3 rounded mb-3 border-start border-4 border-primary shadow-sm"
+                            >
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label
+                                            for="clientCheckin"
+                                            class="form-label fw-bold small text-uppercase text-muted"
+                                            >Ngày nhận phòng
+                                            <span class="text-danger"
+                                                >*</span
+                                            ></label
+                                        >
+                                        <input
+                                            type="date"
+                                            class="form-control"
+                                            id="clientCheckin"
+                                            required
+                                        />
+                                        <div
+                                            class="invalid-feedback"
+                                            id="errorCheckin"
+                                        >
+                                            Vui lòng chọn ngày nhận hợp lệ.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label
+                                            for="clientCheckout"
+                                            class="form-label fw-bold small text-uppercase text-muted"
+                                            >Ngày trả phòng
+                                            <span class="text-danger"
+                                                >*</span
+                                            ></label
+                                        >
+                                        <input
+                                            type="date"
+                                            class="form-control"
+                                            id="clientCheckout"
+                                            required
+                                        />
+                                        <div
+                                            class="invalid-feedback"
+                                            id="errorCheckout"
+                                        >
+                                            Ngày trả phải SAU ngày nhận phòng.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-8">
+                                    <label
+                                        for="clientRoom"
+                                        class="form-label fw-bold"
+                                        >Loại phòng
+                                        <span class="text-danger"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="clientRoom"
                                         required
-                                    />
+                                    >
+                                        <option value="" selected disabled>
+                                            -- Chọn loại phòng --
+                                        </option>
+                                        <option value="Phòng Deluxe">
+                                            Phòng Deluxe
+                                        </option>
+                                        <option value="Phòng Suite">
+                                            Phòng Suite
+                                        </option>
+                                        <option value="Phòng Gia Đình">
+                                            Phòng Gia Đình
+                                        </option>
+                                    </select>
                                     <div class="invalid-feedback">
-                                        Số điện thoại phải là 10 số và bắt đầu
-                                        bằng số 0.
+                                        Vui lòng chọn loại phòng.
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- KHU VỰC CHỌN NGÀY -->
-                            <div class="row bg-light p-2 rounded mb-3 border">
-                                <div class="col-md-6 mb-2">
+                                <div class="col-md-4">
                                     <label
-                                        for="clientCheckin"
+                                        for="clientGuests"
                                         class="form-label fw-bold"
-                                        >Ngày nhận phòng
+                                        >Số khách
                                         <span class="text-danger"
                                             >*</span
                                         ></label
                                     >
-                                    <input
-                                        type="date"
-                                        class="form-control"
-                                        id="clientCheckin"
-                                        required
-                                    />
-                                    <div
-                                        class="invalid-feedback"
-                                        id="errorCheckin"
-                                    >
-                                        Vui lòng chọn ngày nhận hợp lệ.
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"
+                                            ><i class="fa-solid fa-users"></i
+                                        ></span>
+                                        <input
+                                            type="number"
+                                            class="form-control"
+                                            id="clientGuests"
+                                            min="1"
+                                            max="10"
+                                            value="1"
+                                            required
+                                        />
                                     </div>
-                                </div>
-                                <div class="col-md-6 mb-2">
-                                    <label
-                                        for="clientCheckout"
-                                        class="form-label fw-bold"
-                                        >Ngày trả phòng
-                                        <span class="text-danger"
-                                            >*</span
-                                        ></label
-                                    >
-                                    <input
-                                        type="date"
-                                        class="form-control"
-                                        id="clientCheckout"
-                                        required
-                                    />
-                                    <div
-                                        class="invalid-feedback"
-                                        id="errorCheckout"
-                                    >
-                                        Ngày trả phải SAU ngày nhận phòng.
+                                    <div class="invalid-feedback">
+                                        Số lượng khách phải từ 1 trở lên.
                                     </div>
                                 </div>
                             </div>
 
                             <div class="mb-3">
-                                <label for="clientEmail" class="form-label"
-                                    >Email</label
-                                >
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    id="clientEmail"
-                                    placeholder="name@example.com"
-                                />
-                                <div class="invalid-feedback">
-                                    Email không đúng định dạng.
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="clientNote" class="form-label"
+                                <label
+                                    for="clientNote"
+                                    class="form-label fw-bold"
                                     >Ghi chú thêm</label
                                 >
                                 <textarea
                                     class="form-control"
                                     id="clientNote"
-                                    rows="3"
-                                    placeholder="Yêu cầu đặc biệt..."
+                                    rows="2"
+                                    placeholder="Yêu cầu đặc biệt (view biển, tầng cao,...)"
                                 ></textarea>
                             </div>
                         </form>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer bg-light">
                         <button
                             type="button"
-                            class="btn btn-secondary"
+                            class="btn btn-secondary px-4"
                             data-bs-dismiss="modal"
                         >
                             Hủy
                         </button>
                         <button
                             type="button"
-                            class="btn btn-primary"
+                            class="btn btn-primary px-4"
                             id="btnConfirmBooking"
                         >
-                            Xác nhận
+                            <i class="fa-solid fa-check me-2"></i>Xác nhận đặt
+                            phòng
                         </button>
                     </div>
                 </div>
@@ -297,12 +404,26 @@
                     return isValid;
                 }
 
-                // === VALIDATE DATES (NGÀY) ===
+                // === VALIDATE SELECT/NUMBER (Phòng & Số người) ===
+                function validateSelect(selector) {
+                    var value = $(selector).val();
+                    var isValid = false;
+
+                    if (selector === "#clientGuests") {
+                        isValid = value >= 1;
+                    } else {
+                        isValid = value !== "" && value !== null;
+                    }
+
+                    toggleError(selector, isValid);
+                    return isValid;
+                }
+
+                // === VALIDATE DATES ===
                 function validateDates() {
                     var checkinVal = $("#clientCheckin").val();
                     var checkoutVal = $("#clientCheckout").val();
 
-                    // 1. Kiểm tra rỗng
                     if (!checkinVal) {
                         $("#clientCheckin").addClass("is-invalid");
                         return false;
@@ -318,11 +439,8 @@
                         return false;
                     }
 
-                    // 2. So sánh ngày
                     var checkinDate = new Date(checkinVal);
                     var checkoutDate = new Date(checkoutVal);
-
-                    // Reset thông báo lỗi mặc định
                     $("#errorCheckout").text(
                         "Ngày trả phải SAU ngày nhận phòng."
                     );
@@ -333,7 +451,7 @@
                             .removeClass("is-valid");
                         $("#clientCheckin")
                             .addClass("is-invalid")
-                            .removeClass("is-valid"); // Báo đỏ cả 2 để chú ý
+                            .removeClass("is-valid");
                         $("#errorCheckin").text(
                             "Ngày nhận phải TRƯỚC ngày trả."
                         );
@@ -371,8 +489,12 @@
                 $("#clientEmail").blur(function () {
                     validateInput("#clientEmail", regexEmail);
                 });
-
-                // Kiểm tra ngày khi người dùng thay đổi giá trị
+                $("#clientRoom").change(function () {
+                    validateSelect("#clientRoom");
+                });
+                $("#clientGuests").change(function () {
+                    validateSelect("#clientGuests");
+                });
                 $("#clientCheckin, #clientCheckout").change(function () {
                     validateDates();
                 });
@@ -396,7 +518,6 @@
                 });
 
                 $("#btnConfirmBooking").click(function () {
-                    // 1. Validate toàn bộ
                     var isNameValid = validateInput("#clientName", regexName);
                     var isPhoneValid = validateInput(
                         "#clientPhone",
@@ -406,13 +527,17 @@
                         "#clientEmail",
                         regexEmail
                     );
-                    var isDatesValid = validateDates(); // Validate ngày
+                    var isRoomValid = validateSelect("#clientRoom");
+                    var isGuestsValid = validateSelect("#clientGuests");
+                    var isDatesValid = validateDates();
 
                     if (
                         !isNameValid ||
                         !isPhoneValid ||
                         !isEmailValid ||
-                        !isDatesValid
+                        !isDatesValid ||
+                        !isRoomValid ||
+                        !isGuestsValid
                     ) {
                         alert(
                             "Vui lòng kiểm tra lại thông tin nhập lỗi màu đỏ!"
@@ -420,15 +545,15 @@
                         return;
                     }
 
-                    // 2. Lấy dữ liệu
                     var name = $("#clientName").val().trim();
                     var phone = $("#clientPhone").val().trim();
+                    var room = $("#clientRoom").val();
+                    var guests = $("#clientGuests").val();
                     var email = $("#clientEmail").val().trim();
                     var checkin = $("#clientCheckin").val();
                     var checkout = $("#clientCheckout").val();
                     var note = $("#clientNote").val().trim();
 
-                    // Format ngày để hiển thị đẹp hơn (DD/MM/YYYY)
                     const formatDate = (dateString) => {
                         const date = new Date(dateString);
                         return date.toLocaleDateString("vi-VN");
@@ -437,6 +562,8 @@
                     var bookingData = {
                         name: name,
                         phone: phone,
+                        room: room,
+                        guests: guests,
                         email: email,
                         checkin: formatDate(checkin),
                         checkout: formatDate(checkout),
@@ -456,7 +583,9 @@
                     alert("Đặt phòng thành công!");
                     $("#bookingModal").modal("hide");
                     $("#bookingForm")[0].reset();
-                    $(".form-control").removeClass("is-valid is-invalid");
+                    $(".form-control, .form-select").removeClass(
+                        "is-valid is-invalid"
+                    );
                     loadHistory();
                 });
             });
@@ -470,7 +599,7 @@
 
                 if (history.length === 0) {
                     tableBody.append(
-                        '<tr><td colspan="8" class="text-center py-4 text-muted"><i>Chưa có lịch sử đặt phòng nào. Hãy tạo đơn mới!</i></td></tr>'
+                        '<tr><td colspan="9" class="text-center py-4 text-muted"><i>Chưa có lịch sử đặt phòng nào. Hãy tạo đơn mới!</i></td></tr>'
                     );
                     return;
                 }
@@ -481,14 +610,13 @@
                         <th scope="row">${history.length - index}</th> 
                         <td><strong>${item.name}</strong></td>
                         <td>${item.phone}</td>
-                        <td class="text-primary fw-bold">${
-                            item.checkin || "-"
+                        <td class="text-success fw-bold">${
+                            item.room || "-"
                         }</td>
-                        <td class="text-primary fw-bold">${
-                            item.checkout || "-"
-                        }</td>
-                        <td>${item.email || "-"}</td>
-                        <td>${item.note || "-"}</td>
+                        <td class="text-center">${item.guests || "1"}</td>
+                        <td class="small">${item.checkin || "-"}</td>
+                        <td class="small">${item.checkout || "-"}</td>
+                        <td><small>${item.note || "-"}</small></td>
                         <td><small class="text-muted">${item.date}</small></td>
                     </tr>
                 `;

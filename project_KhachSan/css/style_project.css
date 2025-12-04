@@ -45,8 +45,8 @@ body {
     align-items: center;
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.1); /* Nền mờ sang trọng */
-    border-radius: 50%; /* Hình tròn */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -56,8 +56,8 @@ body {
 
 /* Hiệu ứng khi di chuột vào nút Facebook */
 .social-btn.facebook:hover {
-    background-color: #1877f2; /* Màu xanh Facebook chuẩn */
-    transform: translateY(-3px); /* Nổi lên nhẹ */
+    background-color: #1877f2;
+    transform: translateY(-3px);
     color: white;
 }
 

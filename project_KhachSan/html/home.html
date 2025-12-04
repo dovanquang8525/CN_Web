@@ -8,12 +8,6 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/style_project.css" />
 
-        <!-- QUAN TRỌNG: Thêm FontAwesome để hiển thị logo Facebook/Instagram -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-
         <script src="../js/jquery-3.7.1.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
     </head>
@@ -41,9 +35,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto align-items-center">
                             <li class="nav-item m-2">
-                                <a class="nav-link active" href="home.html"
-                                    >Trang chủ</a
-                                >
+                                <a class="nav-link active" href="../html/home.html">Trang chủ</a>
                             </li>
                             <li class="nav-item m-2">
                                 <a class="nav-link" href="#about">Giới thiệu</a>
@@ -59,7 +51,7 @@
                             </li>
                             <li class="nav-item m-2">
                                 <a
-                                    href="booking.html"
+                                    href="../html/booking.html"
                                     class="btn btn-primary btn-booking"
                                 >
                                     Đặt phòng ngay
@@ -84,25 +76,15 @@
             style="margin-top: -50px; z-index: 10"
         >
             <div class="card shadow p-4 border-0">
-                <form action="rooms.html" method="GET">
+                <form action="../html/rooms.html" method="GET">
                     <div class="row g-3">
                         <div class="col-md-3">
                             <label class="form-label">Ngày nhận phòng</label>
-                            <input
-                                type="date"
-                                class="form-control"
-                                name="checkin"
-                                required
-                            />
+                            <input type="date" class="form-control" name="checkin" required />
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Ngày trả phòng</label>
-                            <input
-                                type="date"
-                                class="form-control"
-                                name="checkout"
-                                required
-                            />
+                            <input type="date" class="form-control" name="checkout" required />
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Số người</label>
@@ -167,6 +149,7 @@
                     </p>
                 </div>
                 <div class="row g-4">
+                    <!-- ROOM 1: DELUXE -->
                     <div class="col-md-4">
                         <div class="card h-100 border-0 shadow-sm room-card">
                             <img
@@ -177,24 +160,27 @@
                             <div class="card-body">
                                 <h5 class="card-title">Phòng Deluxe</h5>
                                 <p class="card-text text-muted">
-                                    View hướng biển, diện tích 35m2, đầy đủ tiện
-                                    nghi.
+                                    View hướng biển, diện tích 35m2, đầy đủ tiện nghi.
                                 </p>
-                                <div
-                                    class="d-flex justify-content-between align-items-center mt-3"
-                                >
-                                    <span class="fw-bold text-primary"
-                                        >1.500.000đ / đêm</span
-                                    >
-                                    <a
-                                        href="booking.html"
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="fw-bold text-primary">1.500.000đ / đêm</span>
+                                    <button 
                                         class="btn btn-outline-dark btn-sm"
-                                        >Chi tiết</a
-                                    >
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#roomDetailModal"
+                                        data-title="Phòng Deluxe"
+                                        data-img="../img/deluxe-room.png"
+                                        data-price="1.500.000đ / đêm"
+                                        data-desc="Phòng Deluxe được thiết kế hiện đại với ban công riêng hướng biển. Trang bị giường King size êm ái, bồn tắm đứng và không gian làm việc tiện lợi."
+                                        data-features="View biển,Giường King Size,Wi-Fi tốc độ cao,Bữa sáng miễn phí,Minibar">
+                                        Chi tiết
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- ROOM 2: SUITE -->
                     <div class="col-md-4">
                         <div class="card h-100 border-0 shadow-sm room-card">
                             <img
@@ -205,24 +191,27 @@
                             <div class="card-body">
                                 <h5 class="card-title">Phòng Suite</h5>
                                 <p class="card-text text-muted">
-                                    Không gian rộng rãi, có phòng khách riêng
-                                    biệt.
+                                    Không gian rộng rãi, có phòng khách riêng biệt.
                                 </p>
-                                <div
-                                    class="d-flex justify-content-between align-items-center mt-3"
-                                >
-                                    <span class="fw-bold text-primary"
-                                        >2.500.000đ / đêm</span
-                                    >
-                                    <a
-                                        href="booking.html"
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="fw-bold text-primary">2.500.000đ / đêm</span>
+                                    <button 
                                         class="btn btn-outline-dark btn-sm"
-                                        >Chi tiết</a
-                                    >
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#roomDetailModal"
+                                        data-title="Phòng Suite Hoàng Gia"
+                                        data-img="../img/suite-room.png"
+                                        data-price="2.500.000đ / đêm"
+                                        data-desc="Trải nghiệm đẳng cấp thượng lưu với phòng Suite rộng 60m2. Bao gồm phòng khách riêng biệt, bồn tắm Jacuzzi và dịch vụ quản gia 24/7."
+                                        data-features="Phòng khách riêng,Bồn tắm Jacuzzi,Dịch vụ quản gia,Smart TV 65 inch,Trái cây chào mừng">
+                                        Chi tiết
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- ROOM 3: FAMILY -->
                     <div class="col-md-4">
                         <div class="card h-100 border-0 shadow-sm room-card">
                             <img
@@ -235,17 +224,19 @@
                                 <p class="card-text text-muted">
                                     Phù hợp cho 4 người, 2 giường đôi lớn.
                                 </p>
-                                <div
-                                    class="d-flex justify-content-between align-items-center mt-3"
-                                >
-                                    <span class="fw-bold text-primary"
-                                        >3.200.000đ / đêm</span
-                                    >
-                                    <a
-                                        href="booking.html"
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="fw-bold text-primary">3.200.000đ / đêm</span>
+                                    <button 
                                         class="btn btn-outline-dark btn-sm"
-                                        >Chi tiết</a
-                                    >
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#roomDetailModal"
+                                        data-title="Phòng Gia Đình Ấm Cúng"
+                                        data-img="../img/family-room.png"
+                                        data-price="3.200.000đ / đêm"
+                                        data-desc="Không gian lý tưởng cho cả gia đình với 2 giường đôi lớn, khu vực bếp nhỏ tiện lợi và không gian vui chơi cho trẻ em. Tối đa 4 người lớn và 2 trẻ em."
+                                        data-features="2 Giường đôi,Khu bếp nhỏ,Sân chơi trẻ em,Máy giặt,Bàn ăn gia đình">
+                                        Chi tiết
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -259,80 +250,38 @@
                 <h2 class="mb-5">Tiện Ích Dịch Vụ</h2>
                 <div class="row g-4">
                     <div class="col-6 col-md-2">
-                        <div
-                            class="p-3 border rounded bg-white shadow-sm h-100"
-                        >
-                            <img
-                                src="../img/wifi.png"
-                                alt="Wifi"
-                                class="mb-2"
-                                width="50"
-                            />
+                        <div class="p-3 border rounded bg-white shadow-sm h-100">
+                             <img src="../img/wifi.png" alt="Wifi" class="mb-2" width="50"/>
                             <h6>Wi-Fi Free</h6>
                         </div>
                     </div>
                     <div class="col-6 col-md-2">
-                        <div
-                            class="p-3 border rounded bg-white shadow-sm h-100"
-                        >
-                            <img
-                                src="../img/pool.png"
-                                alt="Pool"
-                                class="mb-2"
-                                width="50"
-                            />
+                        <div class="p-3 border rounded bg-white shadow-sm h-100">
+                             <img src="../img/pool.png" alt="Pool" class="mb-2" width="50"/>
                             <h6>Hồ Bơi</h6>
                         </div>
                     </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="p-3 border rounded bg-white shadow-sm h-100"
-                        >
-                            <img
-                                src="../img/restaurant.png"
-                                alt="Food"
-                                class="mb-2"
-                                width="50"
-                            />
+                     <div class="col-6 col-md-2">
+                        <div class="p-3 border rounded bg-white shadow-sm h-100">
+                             <img src="../img/restaurant.png" alt="Food" class="mb-2" width="50"/>
                             <h6>Nhà Hàng</h6>
                         </div>
                     </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="p-3 border rounded bg-white shadow-sm h-100"
-                        >
-                            <img
-                                src="../img/gym&yoga.png"
-                                alt="Gym"
-                                class="mb-2"
-                                width="50"
-                            />
+                     <div class="col-6 col-md-2">
+                        <div class="p-3 border rounded bg-white shadow-sm h-100">
+                             <img src="../img/gym&yoga.png" alt="Gym" class="mb-2" width="50"/>
                             <h6>Gym & Spa</h6>
                         </div>
                     </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="p-3 border rounded bg-white shadow-sm h-100"
-                        >
-                            <img
-                                src="../img/parking.png"
-                                alt="Parking"
-                                class="mb-2"
-                                width="50"
-                            />
+                     <div class="col-6 col-md-2">
+                        <div class="p-3 border rounded bg-white shadow-sm h-100">
+                             <img src="../img/parking.png" alt="Parking" class="mb-2" width="50"/>
                             <h6>Bãi Đậu Xe</h6>
                         </div>
                     </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="p-3 border rounded bg-white shadow-sm h-100"
-                        >
-                            <img
-                                src="../img/suport.png"
-                                alt="24/7"
-                                class="mb-2"
-                                width="50"
-                            />
+                     <div class="col-6 col-md-2">
+                        <div class="p-3 border rounded bg-white shadow-sm h-100">
+                             <img src="../img/suport.png" alt="24/7" class="mb-2" width="50"/>
                             <h6>Hỗ trợ 24/7</h6>
                         </div>
                     </div>
@@ -366,6 +315,7 @@
                             </li>
                         </ul>
                     </div>
+                    
                     <div class="col-md-4 mb-3">
                         <h5>Theo dõi</h5>
                         <div class="mt-2">
@@ -384,5 +334,83 @@
                 </div>
             </div>
         </div>
+
+        <!-- MODAL CHI TIẾT PHÒNG (MỚI THÊM) -->
+        <div class="modal fade" id="roomDetailModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content border-0 shadow-lg overflow-hidden">
+                    <div class="modal-header border-0 position-absolute w-100" style="z-index: 2; right: 0;">
+                        <button type="button" class="btn-close btn-close-white bg-white p-2 m-2 rounded-circle opacity-100 shadow" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div class="row g-0">
+                            <!-- Cột hình ảnh -->
+                            <div class="col-md-6 position-relative bg-light">
+                                <img src="" id="modalRoomImg" class="img-fluid w-100 h-100" alt="Room Image" style="object-fit: cover; min-height: 300px;">
+                            </div>
+                            <!-- Cột thông tin -->
+                            <div class="col-md-6 p-4 p-md-5 d-flex flex-column">
+                                <h3 id="modalRoomTitle" class="fw-bold mb-2 font-monospace"></h3>
+                                <h4 class="text-primary fw-bold mb-4" id="modalRoomPrice"></h4>
+                                
+                                <p class="text-muted mb-4" id="modalRoomDesc" style="line-height: 1.6;"></p>
+                                
+                                <h6 class="fw-bold text-uppercase small text-muted mb-3">Tiện nghi nổi bật:</h6>
+                                <ul id="modalRoomFeatures" class="list-unstyled row g-2 mb-4">
+                                    <!-- Javascript sẽ điền vào đây -->
+                                </ul>
+
+                                <div class="mt-auto">
+                                    <a href="../html/booking.html" class="btn btn-dark w-100 py-3 rounded-pill shadow fw-bold text-uppercase">
+                                        <i class="fa-regular fa-calendar-check me-2"></i>Đặt phòng ngay
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCRIPT XỬ LÝ MODAL -->
+        <script>
+            // Lấy element modal
+            var roomDetailModal = document.getElementById('roomDetailModal');
+            
+            // Lắng nghe sự kiện khi modal chuẩn bị hiện ra
+            roomDetailModal.addEventListener('show.bs.modal', function (event) {
+                // Nút nào đã kích hoạt modal?
+                var button = event.relatedTarget;
+                
+                // Lấy thông tin từ các thuộc tính data-* của nút đó
+                var title = button.getAttribute('data-title');
+                var img = button.getAttribute('data-img');
+                var price = button.getAttribute('data-price');
+                var desc = button.getAttribute('data-desc');
+                var features = button.getAttribute('data-features').split(','); // Tách chuỗi thành mảng
+
+                // Cập nhật nội dung trong modal
+                var modalTitle = roomDetailModal.querySelector('#modalRoomTitle');
+                var modalImg = roomDetailModal.querySelector('#modalRoomImg');
+                var modalPrice = roomDetailModal.querySelector('#modalRoomPrice');
+                var modalDesc = roomDetailModal.querySelector('#modalRoomDesc');
+                var modalFeatures = roomDetailModal.querySelector('#modalRoomFeatures');
+
+                modalTitle.textContent = title;
+                modalImg.src = img;
+                // Nếu ảnh lỗi thì hiện ảnh placeholder
+                modalPrice.textContent = price;
+                modalDesc.textContent = desc;
+
+                // Xóa danh sách tiện nghi cũ và tạo mới
+                modalFeatures.innerHTML = '';
+                features.forEach(function(feature) {
+                    var li = document.createElement('li');
+                    li.className = 'col-6 small';
+                    li.innerHTML = '<i class="fa-solid fa-check text-success me-2"></i>' + feature;
+                    modalFeatures.appendChild(li);
+                });
+            });
+        </script>
     </body>
 </html>
